@@ -5,14 +5,7 @@ import Todo from './Todo'
 
 class App extends Component {
   state = {
-    toDos: [
-      /*
-      { text: 'Kaffee', done: false },
-      { text: 'Wurst', done: false },
-      { text: 'Anrufen', done: false },
-      { text: 'Bestellen', done: false }
-    */
-    ]
+    toDos: []
   }
 
   listItemDone = index => {
@@ -25,6 +18,14 @@ class App extends Component {
 
     this.setState({
       toDos: newToDos
+    })
+  }
+
+  removeListItem = index => {
+    const { toDos } = this.state
+    const newTodos = [...toDos.slice(0, index), ...toDos.slice(index + 1)]
+    this.setState({
+      toDos: newTodos
     })
   }
   valueFromInput = event => {
@@ -48,6 +49,7 @@ class App extends Component {
               text={todo.text}
               done={todo.done}
               onToggleDone={() => this.listItemDone(index)}
+              onDelete={() => this.removeListItem(index)}
             />
           ))}
         </ul>
