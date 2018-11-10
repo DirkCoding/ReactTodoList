@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Input from './Input'
 import Todo from './Todo'
+import Counter from './Counter'
 
 class App extends Component {
   state = {
@@ -39,13 +40,16 @@ class App extends Component {
     }
   }
   render() {
+    const cntDone = this.state.toDos.filter(item => item.done).length
     return (
       <section>
         <h1>Kim-Dirk's toDo List</h1>
+        <Counter num={cntDone} />
         <Input value={this.valueFromInput} />
         <ul>
           {this.state.toDos.map((todo, index) => (
             <Todo
+              key={index}
               text={todo.text}
               done={todo.done}
               onToggleDone={() => this.listItemDone(index)}
