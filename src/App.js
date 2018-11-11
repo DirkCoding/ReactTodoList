@@ -3,6 +3,7 @@ import './App.css'
 import Input from './Input'
 import Todo from './Todo'
 import Counter from './Counter'
+import './Input.css'
 
 class App extends Component {
   state = {
@@ -43,7 +44,7 @@ class App extends Component {
     const cntDone = this.state.toDos.filter(item => item.done).length
     return (
       <section>
-        <h1>Kim-Dirk's toDo List</h1>
+        <h1>Kim-Dirk's Todo List</h1>
         <Counter num={cntDone} />
         <Input value={this.valueFromInput} />
         <ul>

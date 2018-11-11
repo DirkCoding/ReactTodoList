@@ -1,11 +1,32 @@
 body {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: rgb(255, 228, 181);
+  background: rgb(0, 139, 139);
   padding: 20px;
-  font-family: sans-serif;
+  font-family: 'Lucida Console', Monaco, monospace;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  margin: 20px;
+  background: rgb(0, 128, 128);
+  box-sizing: border-box;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: white;
+}
+h1 {
+  font-size: 2em;
+  text-align: center;
+  background: rgb(32, 178, 170);
+  border-radius: 25px;
+  border-style: solid;
+  border-color: white;
 }
 
 @keyframes App-logo-spin {
