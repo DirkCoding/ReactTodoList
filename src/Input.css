@@ -4,3 +4,7 @@ input {
   border-style: solid;
   border-color: white;
 }
+input:focus {
+  outline: none;
+  box-shadow: 0 0 4px 4px rgb(0, 206, 209);
+}
